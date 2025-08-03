@@ -32,7 +32,7 @@ The default loader is a Lottie animation. It will automatically dismiss after th
 ```dart
 ElevatedButton(
   onPressed: () {
-    EasyLoading.show(context, seconds: 3);
+    SimpleLoading.show(context, seconds: 3);
   },
   child: const Text('Show Lottie for 3s'),
 )
@@ -46,13 +46,13 @@ You can choose from various loading types and customize their properties.
 // Show a red circular loader with a custom stroke width
 ElevatedButton(
   onPressed: () {
-    EasyLoading.show(
+    SimpleLoading.show(
       context,
-      loadingType: LoadingType.circular,
+      loadingType: Type.circular,
       indicatorColor: Colors.red,
       strokeWidth: 8.0,
     );
-    Future.delayed(const Duration(seconds: 3), () => EasyLoading.close());
+    Future.delayed(const Duration(seconds: 3), () => SimpleLoading.close());
   },
   child: const Text('Show Circular Loader'),
 )
@@ -60,13 +60,13 @@ ElevatedButton(
 // Show a linear loader with a custom color and background
 ElevatedButton(
   onPressed: () {
-    EasyLoading.show(
+    SimpleLoading.show(
       context,
-      loadingType: LoadingType.linear,
+      loadingType: Type.linear,
       indicatorColor: Colors.blue,
       indicatorBackgroundColor: Colors.yellow.withOpacity(0.5),
     );
-    Future.delayed(const Duration(seconds: 3), () => EasyLoading.close());
+    Future.delayed(const Duration(seconds: 3), () => SimpleLoading.close());
   },
   child: const Text('Show Linear Loader'),
 )
@@ -74,8 +74,8 @@ ElevatedButton(
 // Show a Cupertino-style loader
 ElevatedButton(
   onPressed: () {
-    EasyLoading.show(context, loadingType: LoadingType.cupertino);
-    Future.delayed(const Duration(seconds: 3), () => EasyLoading.close());
+    SimpleLoading.show(context, loadingType: Type.cupertino);
+    Future.delayed(const Duration(seconds: 3), () => SimpleLoading.close());
   },
   child: const Text('Show Cupertino Loader'),
 )
@@ -83,9 +83,9 @@ ElevatedButton(
 
 ## 🛠 Customization Options
 
-You can customize the loader using the following parameters in `EasyLoading.show()`:
+You can customize the loader using the following parameters in `SimpleLoading.show()`:
 
-* `loadingType`: The type of loading indicator (`LoadingType.lottie`, `LoadingType.circular`, etc.)
+* `loadingType`: The type of loading indicator (`Type.lottie`, `Type.circular`, etc.)
 * `lottiePath`: Custom path for a Lottie animation
 * `size`: Size of the loading container
 * `backgroundColor`: Background color of the loading container
@@ -97,14 +97,14 @@ You can customize the loader using the following parameters in `EasyLoading.show
 
 ## 🔌 Supported Loading Types
 
-The package includes a built-in `LoadingType` enum for easy selection:
+The package includes a built-in `Type` enum for easy selection:
 
 ```dart
-LoadingType.lottie
-LoadingType.circular
-LoadingType.linear
-LoadingType.cupertino
-LoadingType.refresh
+Type.lottie
+Type.circular
+Type.linear
+Type.cupertino
+Type.refresh
 ```
 
 ## 📂 Example with Custom Lottie Animation
@@ -121,10 +121,10 @@ flutter:
 
 ### 💡 Usage
 
-Then, provide the custom path when calling `EasyLoading.show()`:
+Then, provide the custom path when calling `SimpleLoading.show()`:
 
 ```dart
-EasyLoading.show(
+SimpleLoading.show(
   context,
   lottiePath: 'assets/lottie/your_custom_animation.json',
 );
